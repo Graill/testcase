@@ -11,6 +11,8 @@ services:
     restart: unless-stopped
     environment:
       SERVICE_NAME: app1
+    ports:  
+      - "5001:5000"  
     networks:
       - app-network
 	  
@@ -21,7 +23,8 @@ services:
     image: customimage
     container_name: app2
     restart: unless-stopped
-    tty: true
+    ports:  
+      - "5002:5000"  
     environment:
       SERVICE_NAME: app2
     networks:
